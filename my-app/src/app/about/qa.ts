@@ -1,5 +1,6 @@
 export interface QA {
-    id: number,
-    q: string;
-    a: string;
+    "id": number,
+    "tags": string,
+    "q": string;
+    "a": string;
 }

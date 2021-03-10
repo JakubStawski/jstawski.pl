@@ -13,7 +13,7 @@
   },
   {
     "id": 3,
-    "tags": "testowe drugie",
+    "tags": "drugie",
     "q": "Pytanie 3",
     "a": "Treść odpowiedzi na pytanie 3"
   },
@@ -25,14 +25,20 @@
   },
   {
     "id": 5,
-    "tags": "testowe drugie",
+    "tags": "drugie",
     "q": "Pytanie 5",
     "a": "Treść odpowiedzi na pytanie 5"
   },
   {
     "id": 6,
-    "tags": "testowe drugie",
+    "tags": "testowe, drugie",
     "q": "Pytanie 6",
     "a": "Treść odpowiedzi na pytanie 6"
+  },
+  {
+    "id": 7,
+    "tags": "testowe, drugie",
+    "q": "Pytanie 7",
+    "a": "Treść odpowiedzi na pytanie 7"
   }
 ]

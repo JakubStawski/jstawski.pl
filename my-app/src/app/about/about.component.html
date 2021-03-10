@@ -16,27 +16,21 @@
                 <strong class="strongHeader">
                     Czego chciałbyś się o mnie dowiedzieć?
                 </strong>
-                <button class="btn" 
-                    (click)="currentTopic = 'zawodowo'">Ja zawodowo</button>
-                <button class="btn" 
-                    (click)="currentTopic = 'prywatnie'">Ja prywatnie</button>
+                <div class="qaFilters">
+                    <strong>Filtry:</strong>
+                    <span class="filter" (click)="activeFilterDisplay('all')" [ngClass]="{'active': filter === 'all'}">Wszystkie</span>
+                    <span class="filter" (click)="activeFilterDisplay('testowe')" [ngClass]="{'active': filter === 'testowe'}">Testowe</span>
+                    <span class="filter" (click)="activeFilterDisplay('drugie')" [ngClass]="{'active': filter === 'drugie'}">Drugie</span>
+                </div>
             </article>
         </div>
 
-        <p>
-            Filtry:
-        </p>
-
-        <div *ngIf="currentTopic === 'zawodowo'" class="qaFilterContent">
-            
-            
-            <div class="item" *ngFor="let qa of QA.default">
+        <div class="qaFilterContent">           
+            <div class="item" *ngFor="let qa of itemTags">
                 <strong> {{qa.q}} </strong>
+                <p class="tags">{{qa.tags}}</p>
                 <p>{{qa.a}}</p>
             </div>
-        </div>
-        <div *ngIf="currentTopic === 'prywatnie'">
-            Prywatnie
         </div>
     </div>
 </section>
