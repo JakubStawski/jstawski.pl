@@ -1,0 +1,48 @@
+@import '../color.scheme.less';
+
+section {
+    padding:100px;
+
+    strong.strongHeader {
+        display:block;
+    }
+
+    button.btn {
+        display:inline-block;
+        margin-right:20px;
+    }
+
+    .flexible {
+        margin-bottom:50px;
+    }
+    .mat-chip-list {
+        .mat-chip {
+            background:red;
+
+            &.mat-chip-selected {
+                background:@yellow;
+                color: #000
+            }
+        }
+    }
+    .qaFilterContent {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content:center;
+
+        div.item {
+            background: #f4f4f4;
+            border-top: 4px dotted @red;
+            padding:40px;
+            flex-basis: ~"calc(50% - 40px)";
+            margin:20px;
+            box-sizing:border-box;
+            box-shadow:8px 8px 0 #e7e7e7;
+
+            strong {
+                font-size:20px;
+            }
+        }
+    }
+    
+}

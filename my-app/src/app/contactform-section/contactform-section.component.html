@@ -1,0 +1,93 @@
+<section id="contactForm">
+    <div class="container">
+        <h2>Napisz do mnie!</h2>
+        <div class="separator">
+            <span class="material-icons">alternate_email</span>
+        </div>
+        <div class="flexible">
+            <article *ngIf="!emailSent">
+                <strong class="strongHeader">Wypełnij formularz - <span class="highlighted">działa!</span></strong>
+                <form class="contactForm" [formGroup]="mailForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="fill" class="contactFormHalfWidth">
+                        <mat-label>Imię i nazwisko</mat-label>
+                        <input 
+                            name="name" 
+                            required 
+                            formControlName="name"
+                            [formControl]="nameFormControl" 
+                            placeholder="Wpisz swoje imię" matInput
+                        />
+                        <mat-icon matPrefix><span class="material-icons">emoji_people</span></mat-icon>
+                        <mat-error *ngIf="nameFormControl.hasError('required')">
+                            Podaj swoje imię i nazwisko
+                        </mat-error>
+                        <mat-error *ngIf="nameFormControl.hasError('minlength')">
+                            Imię wydaje się za krótkie
+                        </mat-error>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="fill"  class="contactFormHalfWidth">
+                        <mat-label>E-mail</mat-label>
+                        <input 
+                            name="email" 
+                            required 
+                            formControlName="email"
+                            [formControl]="emailFormControl" 
+                            type="email" 
+                            placeholder="Wpisz swój adres E-mail" 
+                            matInput 
+                        />
+                        <mat-icon matPrefix><span class="material-icons">alternate_email</span></mat-icon>
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            Podaj poprawny adres E-mail
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Email jest <strong>wymagany</strong>
+                        </mat-error>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="fill" class="contactFormFullWidth">
+                        <mat-label>Wiadomość</mat-label>
+                        <textarea 
+                            required 
+                            name="message" 
+                            #message 
+                            formControlName="message"
+                            [formControl]="messageFormControl" 
+                            maxlength="500" 
+                            placeholder="Wpisz swoją wiadomość" 
+                            matInput 
+                            cdkTextareaAutosize
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="10">
+                        </textarea>
+                        <mat-icon matPrefix><span class="material-icons">comment</span></mat-icon>
+                        <mat-error *ngIf="messageFormControl.hasError('required')">
+                            Wpisz swoją wiadomość
+                        </mat-error>
+                        <mat-error *ngIf="messageFormControl.hasError('minlength')">
+                            Wiadomość za krótka. Minimum to 25 znaków
+                        </mat-error>
+                        <mat-hint align="end">Minimalna ilość znaków: {{message.value.length}} / 25 </mat-hint>
+                    </mat-form-field>
+                    
+                    <button type="submit" class="btn"><span class="material-icons">email</span> Wyślij wiadomość</button>
+                    
+                </form>
+            </article>
+            <article *ngIf="emailSent" class="emailSent">
+                <strong class="strongHeader">Dzięki za <span class="highlighted">kontakt!</span></strong>
+                <p>Twoja wiadomość została pomyślnie wysłana.<br /> Spodziewaj się rychłej odpowiedzi :)</p>
+                <img src="assets/img/wait.svg" />
+            </article>
+            <aside>
+                <img src="assets/img/contact.svg" />
+            </aside>
+        </div>
+        
+        
+    </div>
+</section>
+
+
+  

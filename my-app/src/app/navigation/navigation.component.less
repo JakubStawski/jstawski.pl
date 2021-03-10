@@ -1,0 +1,77 @@
+@import '../color.scheme.less';
+
+nav {
+    padding-top:30px;
+    background: transparent;
+    line-height:50px;
+
+    ul {
+        margin:0;
+        padding:0;
+        display:flex;
+        justify-content: center;
+        li {
+            list-style: none;
+            display:flex;
+            a {
+                color:rgba(255, 255, 255, 0.7);
+                font-weight:400;
+                font-size:18px;
+                text-decoration: none;
+                align-items: center;
+                position: relative;
+                transition:0.3s;
+                display:flex;
+
+                span {
+                    transition:all 0.2s;
+                    backface-visibility: hidden;
+                    perspective: 1000;
+                    -webkit-perspective: 1000;
+                    -webkit-backface-visibility: hidden;
+
+                    &.name {
+                        min-width:60px;
+                        padding-top:10px;
+                    }
+
+                    &.material-icons {
+                        position:absolute;
+                        top:0;
+                        width:100%;
+                        color: rgba(255,255,255,0.3);
+                    }
+                }
+
+                &:hover, &.active {
+                    span {
+                        color:rgba(255,255,255,1);
+                        &.material-icons {
+                            top:-2px;
+                        }
+
+                        &.name {
+                            padding-bottom:8px;
+                        }
+                    }
+                }
+            }
+
+            &:after {
+                font-family:'Material Icons';
+                content:"horizontal_rule";
+                transform: rotate(60deg);
+                font-size:20px;
+                padding:8px 20px;
+                color: #fff;
+                font-weight:400;
+            }
+
+            &:last-child {
+                &:after {
+                    content:none;
+                }
+            }
+        }
+    }
+}

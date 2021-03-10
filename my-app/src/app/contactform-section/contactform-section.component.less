@@ -1,0 +1,117 @@
+@import '../color.scheme.less';
+
+section#contactForm {
+    padding:60px 0;
+    border-top: 6px dotted @red;
+
+    h2 {
+        text-align:center;
+    }
+
+    article {
+        background: #f0f0f0;
+        border-top:4px dotted @red;
+        padding:20px;
+        box-shadow:8px 8px 0 #e7e7e7;
+        
+
+        &.emailSent {
+            width:650px;
+            text-align:center;
+
+            strong.strongHeader {
+                padding-bottom:0;
+            }
+
+            img {
+                max-width:100%;
+            }
+        }
+
+        strong.strongHeader {
+            display:block;
+            text-align:center;
+            padding:40px 0;
+        }
+        form {
+            text-align:center;
+    
+            // TODO: Overwriting default styles via typescript
+            ::ng-deep .mat-form-field {
+                cursor: text;
+                .mat-form-field-underline {
+                    background-color:@blue;
+                    height:2px;
+                    transform:none;
+                }
+
+                span.material-icons {
+                    margin-right:10px;
+                }
+
+                .mat-form-field-wrapper {
+                    &:hover {
+                        .mat-form-field-ripple {
+                            background: @turque;
+                        }
+                        .mat-form-field-prefix {
+                            color: @turque;
+                        }
+                    }
+                }
+                .mat-form-field-flex {
+                    border-radius:0;
+                    background: #f8f8f8;
+                    align-items: flex-start;
+
+                    .mat-form-field-prefix {
+                        transition:0.2s;
+                        padding-top: 5px;
+                    }
+                }
+                .mat-form-field-label, .mat-hint {
+                    color: #000;
+                }
+            }
+    
+            ::ng-deep .mat-form-field.mat-focused {
+                .mat-form-field-label {
+                    color: #000;
+                }
+                input, textarea {
+                    color: #000;
+
+                    &::placeholder {
+                        color:#aaa;
+                    }
+                }
+                .mat-form-field-prefix {
+                    transition:0.2s;
+                    padding-top: 5px;
+                    color: @turque;
+                }
+                .mat-form-field-ripple {
+                    background-color: @turque;
+                }
+                .mat-form-field-required-marker {
+                    color: @red;
+                }
+                .mat-input-element {
+                    caret-color:@turque;
+                    
+                }
+            }
+    
+            .contactFormHalfWidth {
+                width:50%;
+                padding:0 12px;
+                box-sizing: border-box;
+            }
+            .contactFormFullWidth {
+                width:100%;
+                padding:20px 12px;
+                box-sizing: border-box;
+            }
+        }
+    }
+}

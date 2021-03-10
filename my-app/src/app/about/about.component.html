@@ -1,0 +1,42 @@
+<section>
+    <div class="container">
+        <h1>O mnie</h1>
+        <div class="separator">
+            <span class="material-icons">account_circle</span>
+        </div>
+        <div class="flexible">
+            <aside>
+                <img src="assets/img/me.svg" class="aside-image">
+            </aside>
+            <article>
+                <strong class="strongHeader">
+                    Kim jestem, dokąd zmierzam?
+                </strong>
+                <p>Nazywam się Jakub Stawski i uczę się <span class="highlighted">frontendowania</span> - to tak w skrócie. Staram się rozwijać w tym kierunku za pośrednictwem tej strony, która de facto powstała na ten właśnie użytek. Zamieszczam tutaj swoja rozwiązania, które będzie można w niedługim czasie zobaczyć w zakładce <span class="highlighted">Portfolio</span>. Za pomocą tej strony dowiesz się też co nieco o mnie.</p>
+                <strong class="strongHeader">
+                    Czego chciałbyś się o mnie dowiedzieć?
+                </strong>
+                <button class="btn" 
+                    (click)="currentTopic = 'zawodowo'">Ja zawodowo</button>
+                <button class="btn" 
+                    (click)="currentTopic = 'prywatnie'">Ja prywatnie</button>
+            </article>
+        </div>
+
+        <p>
+            Filtry:
+        </p>
+
+        <div *ngIf="currentTopic === 'zawodowo'" class="qaFilterContent">
+            
+            
+            <div class="item" *ngFor="let qa of QA.default">
+                <strong> {{qa.q}} </strong>
+                <p>{{qa.a}}</p>
+            </div>
+        </div>
+        <div *ngIf="currentTopic === 'prywatnie'">
+            Prywatnie
+        </div>
+    </div>
+</section>

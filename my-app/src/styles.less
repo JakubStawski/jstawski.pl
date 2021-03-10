@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import 'app/color.scheme.less';
+
+body {
+    margin:0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+html, body { height: 100%; }
+
+// Typography
+h1 {
+    text-align:center;
+    font-size: 36px;
+    line-height:44px;          
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    font-weight:600;
+    color:#222;
+    margin:0;
+}
+
+p {
+    font-size:18px;
+    line-height:26px;
+}
+
+.strongHeader {
+    font-size:22px;
+}
+
+// Buttons and links
+button.btn {
+    background-color: @yellow;
+    position:relative;
+    border: none;
+    border-radius:40px;
+    color: #000;
+    padding: 16px 32px;
+    font-size:18px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top:20px;
+    transition:0.2s;
+
+    span {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    &:before {
+        content: "";
+        width:~"calc(100% - 10px)";
+        height:~"calc(100% - 10px)";
+        position:absolute;
+        border:1px solid rgba(0,0,0,0.2);
+        padding:5px;
+        box-sizing: border-box;
+        border-radius:40px;
+        top:5px;
+        left:5px;
+        transition:0.2s;
+    }
+
+    &:hover {
+        &:before {
+            top:-5px;
+            left:-5px;
+        }
+    }
+
+    &:focus {
+        outline:0;
+    }
+}
+
+// Sizes
+.container {
+    width:1200px;
+    margin:0 auto;
+}
+
+.flexible {
+    display:flex;
+    aside {
+        max-width:600px;
+        img {
+            max-width:570px;
+            padding-right:30px;
+        }
+    }
+    article {
+        max-width: 650px;
+        padding-top: 55px;
+    }
+}
+
+// Usefull things
+div.separator {
+    width:200px;
+    text-align: center;
+    margin:0 auto 40px;
+    position: relative;
+    span {
+        width:auto;
+        height:24px;
+        position:relative;
+        margin:10px auto;
+        text-align: center;
+        background:#fff;
+        padding:0 10px;
+        color:@red;
+    }
+    &:before {
+        content: "";
+        height:1px;
+        width:100%;
+        position:absolute;
+        background:@gray;
+        left:0;
+        top:21px;
+    }
+}
+
+.highlighted {
+    position:relative;
+    z-index:1;
+    background: @yellow;
+    color:#000;
+    padding:0 5px;
+    cursor: pointer;
+}
