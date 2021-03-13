@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MyJobComponent } from './my-job/my-job.component';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AboutComponent } from './about/about.component';
     ContactformSectionComponent,
     MyJobComponent,
     AboutComponent,
+    NotFoundComponent,
     
   ],
   imports: [

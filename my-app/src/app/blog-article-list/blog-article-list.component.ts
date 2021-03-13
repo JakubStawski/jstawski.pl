@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-blog-article-list',
@@ -8,15 +7,34 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BlogArticleListComponent implements OnInit {
 
-  articles: any;
+  portfolioItems: any = [
+    {
+      id: 1,
+      title: "Age of Empires - units Calc",
+      href: '/portfolio/aoe-units-calc',
+      img: '/assets/img/portfolio/aoe-calc.jpg',
+      description: 'Kalkulator możliwych do wyprodukowania jednostek na podstawie publicznego API'
+    },
+    {
+      id: 2,
+      title: "Age of Empires - units Calc",
+      href: '/portfolio/aoe-units-calc',
+      img: '/assets/img/portfolio/aoe-calc.jpg',
+      description: 'Kalkulator możliwych do wyprodukowania jednostek na podstawie publicznego API'
+    },
+    {
+      id: 3,
+      title: "Age of Empires - units Calc",
+      href: '/portfolio/aoe-units-calc',
+      img: '/assets/img/portfolio/aoe-calc.jpg',
+      description: 'Kalkulator możliwych do wyprodukowania jednostek na podstawie publicznego API'
+    },
+  ]
 
-  API_KEY: string = 'c2d9dbc3b59d433ba0396bfb8e527bbb';
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    let res = this.http.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY}`);
-    res.subscribe((data) => {
-      this.articles = data;
-    });
+
   }
+
 }

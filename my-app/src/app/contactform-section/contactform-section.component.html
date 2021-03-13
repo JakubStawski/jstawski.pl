@@ -6,7 +6,7 @@
         </div>
         <div class="flexible">
             <article *ngIf="!emailSent">
-                <strong class="strongHeader">Wypełnij formularz - <span class="highlighted">działa!</span></strong>
+                <strong class="strongHeader">Wypełnij formularz - <span class="highlighted">odpowiem!</span></strong>
                 <form class="contactForm" [formGroup]="mailForm" (ngSubmit)="onSubmit()">
                     <mat-form-field appearance="fill" class="contactFormHalfWidth">
                         <mat-label>Imię i nazwisko</mat-label>

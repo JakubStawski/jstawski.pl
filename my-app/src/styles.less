@@ -26,10 +26,17 @@ p {
 
 .strongHeader {
     font-size:22px;
+
+    &.squareDecorated {
+        border-left :30px solid @red;
+        padding-left:10px;
+    }
+    
 }
 
 // Buttons and links
-button.btn {
+button.btn, a.btn {
+    display:inline-block;
     background-color: @yellow;
     position:relative;
     border: none;
@@ -127,5 +134,4 @@ div.separator {
     background: @yellow;
     color:#000;
     padding:0 5px;
-    cursor: pointer;
 }

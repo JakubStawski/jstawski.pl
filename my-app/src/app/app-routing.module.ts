@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogArticleListComponent } from './blog-article-list/blog-article-list.component';
 import { AboutComponent } from './about/about.component';
 import { ContactformSectionComponent } from './contactform-section/contactform-section.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -13,17 +14,25 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'blog',
+    path: 'portfolio',
     component: BlogArticleListComponent,
   },
   {
-    path: 'contact',
+    path: 'kontakt',
     component: ContactformSectionComponent,
   },
   {
-    path: 'about',
+    path: 'omnie',
     component: AboutComponent,
   },
+  {
+    path: '404', 
+    component: NotFoundComponent
+  },
+  {
+    path: '**', 
+    redirectTo: '/404'
+  }
 ];
 
 @NgModule({
